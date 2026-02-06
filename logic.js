@@ -12,13 +12,7 @@ function buildGrid(width, height) {
     {
         for(let j = 0; j < height; j++)
         {
-            const cell = document.createElement("div");
-            cell.classList.add("cell");
-            cell.style.boxSizing = "border-box";
-            cell.style.border = "solid 1px black";
-            cell.style.width = "20px";
-            cell.style.height = "20px";
-            cell.style.flexBasis = "1";
+            const cell = buildCell();
             grid.appendChild(cell);
 
             cell.addEventListener("mouseover", changeColorOnMouseOver);
@@ -29,6 +23,17 @@ function buildGrid(width, height) {
     grid.style.height = `${20*height}px`;
 
     document.body.appendChild(grid);
+}
+
+function buildCell() {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    cell.style.boxSizing = "border-box";
+    cell.style.border = "solid 1px black";
+    cell.style.width = "20px";
+    cell.style.height = "20px";
+    cell.style.flexBasis = "1";
+    return cell;
 }
 
 function changeColorOnMouseOver(event) {
