@@ -1,3 +1,10 @@
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 320px;
+}
+
 .hovered {
     background-color: aquamarine;
 }
