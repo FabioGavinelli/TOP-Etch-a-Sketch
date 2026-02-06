@@ -20,6 +20,8 @@ function buildGrid(width, height) {
             cell.style.height = "20px";
             cell.style.flexBasis = "1";
             grid.appendChild(cell);
+
+            cell.addEventListener("mouseover", changeColorOnMouseOver);
         }
     }
 
@@ -27,6 +29,10 @@ function buildGrid(width, height) {
     grid.style.height = `${20*height}px`;
 
     document.body.appendChild(grid);
+}
+
+function changeColorOnMouseOver(event) {
+    event.target.classList.add("hovered");
 }
 
 initialization();
